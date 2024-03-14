@@ -2,6 +2,8 @@
 
 Este repositorio contiene el código fuente del Sistema de Reserva CanchaUp, una aplicación web desarrollada con tecnologías modernas para facilitar la reserva de canchas y la organización de partidos de fútbol de manera eficiente y sencilla.
 
+
+
 ## Características Principales
 
 - Registro y autenticación de usuarios.
@@ -9,6 +11,14 @@ Este repositorio contiene el código fuente del Sistema de Reserva CanchaUp, una
 - Creación de equipos y búsqueda de rivales.
 - Búsqueda de partidos aleatorios.
 - Interfaz de usuario intuitiva.
+
+![funcionalidad Usuario](canchaFront.png)
+
+## Funcionalidad de Administrador
+
+El frontend también incluye una pestaña de administrador que permite gestionar diferentes aspectos del sistema, incluyendo partidos reservados, jugadores y encargados. Esta funcionalidad proporciona a los administradores herramientas adicionales para gestionar y supervisar el funcionamiento del sistema en su conjunto.
+
+![funcionalidad Administrador](canchaUpAdmin.png)
 
 ## Tecnologías Utilizadas
 
