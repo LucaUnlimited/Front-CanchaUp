@@ -1,0 +1,74 @@
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150vh;
+
+
+    background-image: url('../../../../assets/images/dashboradimg.jpeg'); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la URL de tu imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para que cubra todo el contenedor */
+    background-position: center center; /* Ajusta la posición de la imagen de fondo */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    
+  }
+ 
+  .scrollable-card {
+    max-height: 80vh; /* Altura máxima del p-card, ajusta según tus necesidades */
+    overflow: auto; /* Habilita el desplazamiento cuando el contenido excede la altura máxima */
+    border: 1px solid #ffffff; /* Puedes ajustar el color y el grosor del borde */
+    border-radius: 5px; /* Puedes ajustar el radio de borde para esquinas redondeadas */
+    padding: 10px; /* Agregar espacio entre el borde y el contenido del p-card */
+   
+    animation: bounceInUp; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+      
+}
+
+
+
+.bn632-hover {
+ 
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn25 {
+  background-image: linear-gradient(
+    to right,
+    #29323c,
+    #485563,
+    #2b5876,
+    #4e4376
+  );
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
+.btn2{
+  margin-left: 80px;
+}

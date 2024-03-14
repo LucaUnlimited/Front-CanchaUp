@@ -1,0 +1,93 @@
+<div class="conteiner">
+  <div class="myimg">
+    <img
+      class="myimg"
+      src="../../../../assets/images/Reserva-tu-cancha-min-450x300.jpg"
+    />
+  </div>
+
+  <form class="form">
+    <div class="input">
+      <label for="">Seleccione la Fecha</label>
+      <input
+        matInput
+        type="date"
+        placeholder="Día"
+        [(ngModel)]="partido.dia"
+        [ngModelOptions]="{ standalone: true }"
+        (change)="onDiaSeleccionado()"
+      />
+    </div>
+    <div class="input">
+      <label for="">Seleccione el Horario</label>
+      <select
+        [(ngModel)]="partido.horario"
+        [ngModelOptions]="{ standalone: true }"
+        (ngModelChange)="onHorarioSeleccionado()"
+        [disabled]="!diaSeleccionado"
+      >
+        <option *ngFor="let horarioOption of horarios" [value]="horarioOption">
+          {{ horarioOption }}
+        </option>
+      </select>
+    </div>
+    <div class="button">
+      <button class="botonCrear" type="submit">Crear</button>
+    </div>
+  </form>
+</div>
+<!-- 
+<mat-dialog-content
+  style="
+    background-image: url('../../../../assets/images/background-stars.jpg');
+  "
+  class="custom-dialog-container"
+>
+  <img
+    class="myimg"
+    src="../../../../assets/images/Reserva-tu-cancha-min-450x300.jpg"
+    alt="Descripción de la imagen"
+    loading="lazy"
+  />
+  <br />
+  <br />
+
+  <mat-form-field class="mattiDialog">
+    <span>
+      <FONT COLOR="#5d5def">Ingrese día</FONT>
+    </span>
+    <input
+      matInput
+      type="date"
+      placeholder="Día"
+      [(ngModel)]="partido.dia"
+      [ngModelOptions]="{ standalone: true }"
+      (change)="onDiaSeleccionado()"
+    />
+  </mat-form-field>
+  <br />
+
+  <mat-form-field class="mattiDialog">
+    <span>
+      <FONT COLOR="#5d5def">Seleccione Horario</FONT>
+    </span>
+    <mat-select
+      [(ngModel)]="partido.horario"
+      [ngModelOptions]="{ standalone: true }"
+      (ngModelChange)="onHorarioSeleccionado()"
+      [disabled]="!diaSeleccionado"
+    >
+      <mat-option
+        *ngFor="let horarioOption of horarios"
+        [value]="horarioOption"
+      >
+        {{ horarioOption }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="contenedor-bn6">
+    <button id="button" type="submit">Crear</button>
+  </div>
+</mat-dialog-content>
+ -->

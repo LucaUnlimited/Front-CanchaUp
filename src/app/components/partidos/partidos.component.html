@@ -1,0 +1,116 @@
+<body>
+  
+<div class="mybotton">
+  <br>
+  <!-- <p-button class="mybotton" label="Salir" severity="danger"></p-button> -->
+ <button (click)="navegar()" class="bn632-hover bn23">Volver a Home</button>
+</div>
+  
+<div class="row">
+  <!-- FORM -->
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body p-4">
+        <!-- FORM -->
+        <form #partidoForm="ngForm" (ngSubmit)="agregarPartido(partidoForm)">
+          <h1  class="titulo-bonito">Crear Partido</h1>
+          <br>
+          <input type="hidden" name="id" #id="ngModel" [(ngModel)]="partidoService.partido.id">
+          <br>
+          <div class="form-group">
+
+          
+            <span style="color: rgb(36, 108, 47);">Elige tu Horario</span>
+            <select class="form-select" formControlName="horario" [(ngModel)]="partidoService.partido.horario" >
+              <option [ngValue]="null" disabled>Horario</option>
+              <option *ngFor="let partido of partidoService.partidos" [ngValue]="partidoService.partidos">
+               {{ partidoService.partidos }}
+              </option>
+            </select> 
+          </div>
+
+          <br>
+          <div class="form-group" style="width: 250px;">
+            <input type="date" name="dia" #dia="ngModel" [(ngModel)]="partidoService.partido.dia" placeholder="Seleccione la fecha"
+              class="form-control">
+          </div>
+          <br>
+          <div class="form-group" style="width: 250px;">
+            <input type="text" name="telefono" #telefono="ngModel" [(ngModel)]="partidoService.partido.telefono"
+              placeholder="Ingrese el teléfono" class="form-control">
+          </div>
+          <br>
+          <div class="form-group" style="width: 250px;">
+            <input type="text" name="precio" #precio="ngModel" [(ngModel)]="partidoService.partido.precio"
+              placeholder="Ingrese el precio" class="form-control">
+          </div>
+          <br>
+          <a href="/buttons/6" type="submit" class="bn6">Guardar</a>
+         
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body p-4">
+        <h1  class="titulo-bonito">Buscar Partido</h1>
+        <br>
+        <span class="p-input-icon-left">
+        
+          <input type="text" placeholder="Ingrese Nro de Telefono" pInputText /> &nbsp;&nbsp;
+          <button type="button" class="btn btn-secondary" (click)="buscarPartido()">Buscar</button>
+        </span>
+      </div>
+      
+    </div>
+    
+  </div>
+  <h1> &nbsp; </h1>
+  <h1> &nbsp; </h1>
+  <!-- TABLE -->
+  <div class="tabla-container">
+    
+    <table class="tabla-estilo">
+      <thead>
+        <th>Horario</th>
+        <th>Día</th>
+        <th>Teléfono</th>
+        <th>Precio</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let partido of partidoService.partidos">
+          <td>{{ partidoService.partido.horario }}</td>
+          <td>{{ partidoService.partido.dia | date:'shortDate' }}</td>
+          <td>{{ partidoService.partido.telefono }}</td>
+          <td>{{ partidoService.partido.precio }}</td>
+          <td>
+
+            <br>
+            <a (click)="borrarPartido(partidoService.partido.id,partidoForm)" class="btn btn-danger btn-sm">
+              <i class="material-icons">delete</i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="paginator-container">
+  <mat-paginator class="mat-paginator" [pageSizeOptions]="[5, 10, 20, 50]"
+    (page)="onPageChange($event)"></mat-paginator>
+</div>
+<div class="boton-container">
+  <button class="boton-personalizado" style="border-bottom-left-radius: 10px;" (click)="goToFirstPage()">
+    <i class="fa fa-angle-double-left"></i>
+  </button>
+  <button class="boton-personalizado" style="border-bottom-right-radius: 10px;" (click)="goToLastPage()">
+    <i class="fa fa-angle-double-right"></i>
+  </button>
+</div>
+<br>
+
+</body>
